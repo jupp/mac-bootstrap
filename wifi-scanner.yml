@@ -1,0 +1,6 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install wifi scanner
+      command: /usr/local/bin/mas install 411680127

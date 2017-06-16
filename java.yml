@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install java
+      homebrew_cask:
+        name: java
+        state: present
+    - name: resolve JAVA_HOME
+      command: /usr/libexec/java_home
+      register: java_home
+    - name: set JAVA_HOME for zsh
+      copy:
+        dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/java.zsh"
+        content: "export JAVA_HOME={{ java_home.stdout }}"

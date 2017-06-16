@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install skype
+      homebrew_cask:
+        name: skype
+        state: present

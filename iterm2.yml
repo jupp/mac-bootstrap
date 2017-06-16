@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install iterm2
+      homebrew_cask:
+        name: iterm2
+        state: present
+    - name: copy profile
+      copy:
+        src: iterm2-profile.json
+        dest: "{{ ansible_env.HOME }}/Library/Application Support/iTerm2/DynamicProfiles/main-profile.json"

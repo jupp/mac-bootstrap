@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install dropbox
+      homebrew_cask:
+        name: dropbox
+        state: present

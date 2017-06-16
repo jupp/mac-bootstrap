@@ -1,0 +1,27 @@
+---
+
+- include: homebrew.yml
+- include: alfred.yml
+- include: dropbox.yml
+- include: 1password.yml
+- include: iterm2.yml
+- include: zsh.yml
+- include: git.yml
+- include: java.yml
+- include: maven.yml
+- include: idea.yml
+- include: vlc.yml
+- include: python.yml
+- include: glances.yml
+- include: mas.yml
+- include: monit.yml
+- include: slack.yml
+- include: openconnect.yml
+- include: docker.yml
+- include: virtualbox.yml
+- include: skype.yml
+- include: telegram.yml
+- include: steam.yml
+- include: flux.yml
+- include: tunnelblick.yml
+- include: locale.yml

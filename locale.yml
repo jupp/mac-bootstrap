@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  tasks:
+    - name: set locale variables
+      copy:
+        dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/locale.zsh"
+        content: >
+          export LC_ALL=en_US.UTF-8  
+          export LANG=en_US.UTF-8

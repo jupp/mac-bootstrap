@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install maven
+      homebrew:
+        name: maven
+        state: latest
+    - name: resolve M2_HOME
+      shell: > 
+        mvn -version | grep "Maven home" | awk -F"\: " '{ print $2 }'
+      register: maven_home
+    - name: set M2_HOME for zsh
+      copy:
+        dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/maven.zsh"
+        content: "export M2_HOME={{ maven_home.stdout }}"

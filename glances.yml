@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install glances
+      become: yes
+      pip:
+        name: glances
+        state: latest

@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+    - name: update & upgrade homebrew
+      homebrew:
+        update_homebrew: yes
+        upgrade_all: yes

@@ -1,0 +1,6 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install monit
+      command: /usr/local/bin/mas install 1014850245

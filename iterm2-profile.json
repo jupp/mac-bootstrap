@@ -1,0 +1,12 @@
+{
+  "Profiles": [
+    {
+      "Name": "main",
+      "Guid": "0D26A2EE-AF67-4C43-9F0E-E8E8BA870670",
+      "Dynamic Profile Parent Name": "Default",
+      "Rows" : 40,
+      "Cursor Type" : 1,
+      "Blinking Cursor" : true
+    }
+  ]
+}

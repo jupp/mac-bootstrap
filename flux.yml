@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install flux
+      homebrew_cask:
+        name: flux
+        state: present

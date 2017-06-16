@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install python
+      homebrew:
+        name: python
+        state: latest
+    - name: upgrade setuptools
+      become: yes
+      pip:
+        name: setuptools
+        state: latest
+    - name: upgrade pip
+      become: yes
+      pip:
+        name: pip
+        state: latest

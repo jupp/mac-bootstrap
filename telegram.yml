@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install telegram
+      homebrew_cask:
+        name: telegram
+        state: present

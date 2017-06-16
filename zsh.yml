@@ -1,0 +1,35 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install zsh
+      homebrew:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - zsh
+        - zsh-completions
+
+    - name: add zsh to /etc/shells
+      become: yes
+      lineinfile:
+        dest: /etc/shells
+        line: "/usr/local/bin/zsh"
+
+    - name: set zsh as default shell
+      become: yes
+      command: /usr/bin/chsh -s /usr/local/bin/zsh
+
+    - name: set zsh as default osx shell
+      become: yes
+      command: /usr/bin/dscl . -create /Users/{{ ansible_user_id }} UserShell /usr/local/bin/zsh
+
+    - name: install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      args:
+        creates: "{{ ansible_env.HOME }}/.oh-my-zsh"
+
+    - name: copy .zshrc
+      copy:
+        src: .zshrc
+        dest: "{{ ansible_env.HOME }}/.zshrc"
